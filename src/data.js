@@ -87,6 +87,7 @@ export const listProyek = [
     desk: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis, laborum!",
     tools: ["HTML", "CSS", "Javascript", "React JS", "tailwind CSS"],
     dad: "200",
+    link :"https://portofolio-robbi-prakweb2.vercel.app/"
   },
   {
     id: 2,

@@ -2,6 +2,7 @@ import { data, div, img, p } from "motion/react-client";
 import heroImg from "./assets/hero-img.webp";
 import Lanyard from "./component/Lanyard/Lanyard";
 import ScrollVelocity from "./component/ScrollVelocity/ScrollVelocity";
+import TextType from "./component/TextType/TextType";
 import DataImage from "./data.js";
 import { listTools, listProyek } from "./data";
 
@@ -11,30 +12,34 @@ import imghero from "/src/assets/profile.png";
 function App() {
   return (
     <>
-      <div className="hero grid md:grid-cols-2 items-center pt-4 xl:gap-0 gap-6 grid-cols-1">
+      <div className="hero grid md:grid-cols-2 pt-2 xl:gap-0 items-center gap-10 grid-cols-1">
+        {/* Hero Section */}
         <div className="animate__animated animate__fadeInUp animate__delay-3s">
-          <div className="flex items-center gap-3 mb-6 bg-zinc-800 w-fit p-4 rounded-2xl">
-            {/* <img
-              src={imghero}
-              alt="hero img"
-              className="w-10 rounded-md"
-              loading="lazy"
-            /> */}
-            <q>Kode tanpa dokumentasi seperti buku tanpa daftar isi.</q>
+          <div className="flex items-center gap-3 mb-6 bg-zinc-800 w-fit p-2 rounded-2xl">
+            <q>Coding Forever.</q>
           </div>
-          <h1 className="text-3xl/tight font-bold mb-6">
+          {/* <h1 className="text-3xl/tight font-bold mb-6">
             Hi, Saya Robbi Idham Fawaid
-          </h1>
-          <p className="text-base/loose mb-6 opacity-50">
-            Saya bersemangat dengan bidang pemrograman web dan bercita-cita
-            menjadi seorang developer yang mahir. Saya fokus pada pengembangan
-            skill untuk membangun aplikasi web yang responsive dan berkinerja
-            tinggi.
+          </h1> */}
+          <TextType
+            text={[
+              "Hi, my name is Robbi",
+              "I am a frontend developer",
+              "I am a web developer",
+            ]}
+            typingSpeed={75}
+            pauseDuration={1500}
+            showCursor={true}
+            cursorCharacter="|"
+          />
+          <p className="text-base/loose mb-10 opacity-50">
+            I am passionate about the field of web programming and aspire to
+            become a skilled developer.
           </p>
           <div className="flex items-center sm:gap-4 gap-2">
             <a
               href="#"
-              className="bg-violet-700 p-4 rounded-2xl hover:bg-violet-600"
+              className="bg-blue-700 p-4 rounded-2xl hover:bg-blue-600"
             >
               Donwload CV <i className="ri-download-line ri-lg"></i>
             </a>
@@ -42,16 +47,10 @@ function App() {
               href="#proyek"
               className="bg-zinc-700 p-4 rounded-2xl hover:bg-zinc-600"
             >
-              Lihat Proyek <i className="ri-arrow-down-line ri-lg"></i>
+              view project <i className="ri-arrow-down-line ri-lg"></i>
             </a>
           </div>
         </div>
-        {/* <img
-          src={DataImage.HeroImage}
-          alt="Hero img"
-          className="w-[400px] md:ml-auto"
-          loading="lazy"
-        /> */}
         <ProfileCard
           className="w-[350px] md:ml-auto animate__animated animate__fadeInUp animate__delay-4s"
           name="Robbi Idham"
@@ -76,7 +75,7 @@ function App() {
         <ScrollVelocity texts={["FrontEnd Developer", "Web Developer"]} />
       </div>
 
-      {/* tentang */}
+      {/* About Section */}
       <div className="tentang mt-20 " id="tentang">
         <div
           className=" mx-auto h-1/2 p-7 bg-zinc-800 rounded-lg grid grid-cols-1 lg:grid-cols-2 items-center"
@@ -91,16 +90,15 @@ function App() {
               className="w-12 rounded-md mb-10 sm:hidden"
               loading="lazy"
             />
-            <h1 className="text-5xl font-bold mb-10">Tentang Saya</h1>
+            <h1 className="text-5xl font-bold mb-10">About Me</h1>
             <p className="text-base/loose mb-10">
-              Saya adalah seorang Frontend dan Web Developer yang memiliki
-              ketertarikan besar pada pengembangan antarmuka web yang modern,
-              cepat, dan intuitif. Dengan keahlian dalam HTML, CSS, JavaScript,
-              serta framework seperti React, saya berkomitmen untuk menghadirkan
-              pengalaman pengguna yang maksimal melalui desain yang responsif
-              dan performa yang optimal. Saya juga terbiasa bekerja dalam tim
-              lintas disiplin, dan terus mengikuti perkembangan teknologi web
-              untuk menghasilkan solusi yang relevan dan inovatif.
+              I am a Frontend and Web Developer with a passion for developing
+              modern, fast, and intuitive web interfaces. With expertise in
+              HTML, CSS, JavaScript, and frameworks like React, I am committed
+              to delivering optimal user experiences through responsive design
+              and optimal performance. I am also accustomed to working in
+              cross-disciplinary teams and stay up-to-date on web technology
+              developments to produce relevant and innovative solutions.
             </p>
             <div className="flex items-center justify-between">
               <img
@@ -112,15 +110,15 @@ function App() {
               <div className="flex items-center gap-6">
                 <div>
                   <h1 className="text-4xl mb-1">
-                    1<span className="text-violet-500">+</span>
+                    3<span className="text-blue-500">+</span>
                   </h1>
-                  <p>Proyek selesai</p>
+                  <p>project completed</p>
                 </div>
                 <div>
                   <h1 className="text-4xl mb-1">
-                    0<span className="text-violet-500">+</span>
+                    0<span className="text-blue-500">+</span>
                   </h1>
-                  <p>Tahun Pengalaman</p>
+                  <p>years of experience</p>
                 </div>
               </div>
             </div>
@@ -137,7 +135,7 @@ function App() {
             data-aos-duration="1000"
             data-aos-once="true"
           >
-            Tools yang dipakai
+            tools used
           </h1>
           <p
             className="xl:w-2/5 lg:w-2/4 md:w-2/3 sm:w-3/4 w-full text-base/loose opacity-50"
@@ -146,12 +144,11 @@ function App() {
             data-aos-delay="300"
             data-aos-once="true"
           >
-            Berikut ini adalah beberapa tools yang saya pakai untuk membuat
-            website
+            Here are some of the tools I use to create websites.
           </p>
 
-          {/* tools */}
-          <div className="tools-box mt-14 grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-4" >
+          {/* tools section */}
+          <div className="tools-box mt-14 grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-4">
             {listTools.map((tool) => (
               <div
                 className="flex items-center gap-2 p-3 border border-zinc-600 rounded-md hover:bg-zinc-800 group"
@@ -187,7 +184,7 @@ function App() {
           data-aos-duration="1000"
           data-aos-once="true"
         >
-          Proyek
+          Project
         </h1>
         <p
           className="text-base/loose text-center opacity-50"
@@ -196,7 +193,7 @@ function App() {
           data-aos-delay="300"
           data-aos-once="true"
         >
-          Berikut ini adalah proyek yang telah saya buat
+          Here are the projects I have created
         </p>
         <div className="proyek-box mt-14 grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-4 justify-center">
           {listProyek.map((proyek) => (
@@ -225,9 +222,9 @@ function App() {
                 <div className="mt-8 text-center">
                   <a
                     href={proyek.link}
-                    className="bg-violet-700 p-3 rounded-lg block border border-zinc-600 hover:bg-violet-600"
+                    className="bg-blue-700 p-3 rounded-lg block border border-zinc-600 hover:bg-blue-600"
                   >
-                    Lihat Website
+                    see website
                   </a>
                 </div>
               </div>
@@ -237,7 +234,7 @@ function App() {
       </div>
       {/* proyek */}
 
-      {/* kontak */}
+      {/* kontak section */}
 
       <div className="kontak mt-32 sm:p-10 p-0" id="kontak">
         <h1
@@ -246,7 +243,7 @@ function App() {
           data-aos-duration="1000"
           data-aos-once="true"
         >
-          Kontak
+          Contact
         </h1>
         <p
           className="text-base/loose text-center mb-10 opacity-50"
@@ -255,7 +252,7 @@ function App() {
           data-aos-delay="300"
           data-aos-once="true"
         >
-          Mari terhubung dengan saya
+          Come connect with me
         </p>
         <form
           action="https://formsubmit.co/robbiidham30@gmail.com"
@@ -269,11 +266,11 @@ function App() {
         >
           <div className="flex flex-col gap-6">
             <div className="flex flex-col gap-2">
-              <label className="font-semibold">Nama Lengkap</label>
+              <label className="font-semibold">full name</label>
               <input
                 type="text"
                 name="nama"
-                placeholder="Masukkan Nama"
+                placeholder="enter name"
                 required
                 className="border border-zinc-500 p-2 rounded-md"
               />
@@ -283,30 +280,30 @@ function App() {
               <input
                 type="email"
                 name="email"
-                placeholder="Masukkan Email"
+                placeholder="enter email"
                 required
                 className="border border-zinc-500 p-2 rounded-md"
               />
             </div>
             <div className="flex flex-col gap-2">
               <label htmlFor="pesan" className="font-semibold">
-                Pesan
+                message
               </label>
               <textarea
                 name="pesan"
                 id="pesan"
                 cols="45"
                 rows="7"
-                placeholder="Pesan"
+                placeholder="mesagge"
                 className="border border-zinc-500 p-2 rounded-md"
               ></textarea>
             </div>
             <div className="text-center">
               <button
-                className="bg-violet-700 p-3 rounded-lg w-full border cursor-pointer border-zinc-600 hover:bg-violet-600"
+                className="bg-blue-700 p-3 rounded-lg w-full border cursor-pointer border-zinc-600 hover:bg-blue-600"
                 type="submit"
               >
-                Kirim Pesan
+                send message
               </button>
             </div>
           </div>
