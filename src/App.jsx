@@ -12,7 +12,7 @@ import imghero from "/src/assets/profile.png";
 function App() {
   return (
     <>
-      <div className="hero grid md:grid-cols-2 pt-2 xl:gap-0 items-center gap-10 grid-cols-1">
+      <div className="hero grid md:grid-cols-2 pt-2 xl:gap-0 pt-10 gap-10 grid-cols-1">
         {/* Hero Section */}
         <div className="animate__animated animate__fadeInUp animate__delay-3s">
           <div className="flex items-center gap-3 mb-6 bg-zinc-800 w-fit p-2 rounded-2xl">
